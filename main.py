@@ -15,14 +15,14 @@ df = pdr.get_data_yahoo(tickers="GOOG", start=start, end=end)
 df['Middle'] = (df.Open+df.Close)/2
 df['Height'] = abs(df.Open-df.Close)
 
-p = figure(x_axis_type='datetime', width = 1000, height=300) 
+p = figure(x_axis_type='datetime', width = 1000, height=300, sizing_mode = "scale_width") 
 p.title.text = "Candlestick Chart" 
 p.grid.grid_line_alpha = 0.3
 hours_12 = 12*60*60*1000 
 
 p.segment(df.index, df.High, df.index, df.Low, color='Black')
 
-p.rect(df.index,df.Middle, hours_12, df['Height'], fill_color="green", line_color="black")
+p.rect(df.index,df.Middle, hours_12, df['Height'], fill_color="#CCFFFF", line_color="black")
 
 
 
