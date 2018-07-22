@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block style %}
+	<link rel="stylesheet" type="text/css" href="{{ data.cdn_css.0 }}">  
+{% endblock %}
+
+{% block js %}
+	<script src="{{ data.cdn_js.0 }}"></script>
+{% endblock %}
+
+{% block content %}
+	{{ data.div | safe }}
+{% endblock %}
+
+{% block script %}
+	<script">{{ data.script | safe }}</script>
+{% endblock %}
