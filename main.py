@@ -17,8 +17,15 @@ df['Height'] = abs(df.Open-df.Close)
 
 p = figure(x_axis_type='datetime', width = 1000, height=300) 
 p.title.text = "Candlestick Chart" 
+p.grid.grid_line_alpha = 0.3
 hours_12 = 12*60*60*1000 
+
+p.segment(df.index, df.High, df.index, df.Low, color='Black')
+
 p.rect(df.index,df.Middle, hours_12, df['Height'], fill_color="green", line_color="black")
+
+
+
 output_file("CS.html") 
 show(p)
 
